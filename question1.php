@@ -1,11 +1,23 @@
 <?php
-  include_once "classes.php";
-
-
-
-  
-
-
+include_once "classes.php";
+    if(isset($_POST['x1']) && !empty($_POST['x1']) &&
+        isset($_POST['y1']) && !empty($_POST['y1']) &&
+        isset($_POST['x2']) && !empty($_POST['x2']) &&
+        isset($_POST['y2']) && !empty($_POST['y2'])){ 
+        
+        $x1 = $_POST['x1'];
+        $y1 = $_POST['y1'];
+        $x2 = $_POST['x2'];
+        $y2 = $_POST['y2'];
+        $point1 = new Point($x1,$y1);
+        $point2 = new Point($x2,$y2);
+        $result = "la distance entre le point (".$point1->afficherX().",".$point1->afficherY().")"." et le point (".$point2->afficherX().",".$point2->afficherY().") est : ".$point1->distance($point2);
+        
+    }else{
+        if(isset($_POST['x1'])) {
+            $result = "les champs sont obligatoire";
+        }
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,20 +46,7 @@
                 <a href="question3.php" class="menu-item d-block">
                     Question 3
                 </a>
-            </div>
-            <div class="col-sm-12">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                </div>
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-                </div>
+            </div>            
                 <div class="form">
                     <div class="row">
                         <div class="col-md-6"></div>
@@ -59,12 +58,27 @@
                                 — afficherY qui retourne la valeur de y<br>
                                 — distance qui calcule la distance entre le point actuel et le nouveau point et retourne le résultat<br><br>
                             </p>
+                        <?php 
+                                global $result;
+                                if($result) {
+                                    
+                                    echo "<div class='col-md-12'>
+                                    <div class='alert alert-success'>".$result."</div>
+                                    </div>";
+                                    }
+                        ?>
                             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                                <span class="form-group">
+                                    <input type="text" class="form-control-lg" name="x1" placeholder="Entrez X1">
+                                </span>
                                 <div class="form-group">
-                                    <input type="text" class="form-control-lg" placeholder="Entrez X">
+                                    <input type="text" class="form-control-lg" name="y1" placeholder="Entrez Y1">
                                 </div>
+                                <span class="form-group">
+                                    <input type="text" class="form-control-lg" name="x2" placeholder="Entrez X2">
+                                </span>
                                 <div class="form-group">
-                                    <input type="text" class="form-control-lg" placeholder="Entrez Y">
+                                    <input type="text" class="form-control-lg" name="y2" placeholder="Entrez Y2">
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" value="Calculer distance" class="btn btn-primary calc">
