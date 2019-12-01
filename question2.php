@@ -16,6 +16,16 @@ if(isset($_POST['point1']) && !empty($_POST['point1']) &&
     $y2 = $point2[1];
     $x3 = $point3[0];
     $y3 = $point3[1];
+
+    $x1 = $point1[0];
+    $y1 = $point1[1];
+
+    $x2 = $point2[0];
+    $y2 = $point2[1];
+
+    $x3 = $point3[0];
+    $y3 = $point3[1];
+
     $pointClass1 = new Point($x1,$x1);
     $pointClass2 = new Point($x2,$x2);
     $pointClass3 = new Point($x3,$x3);

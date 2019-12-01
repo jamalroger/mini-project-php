@@ -1,5 +1,6 @@
 <?php
 include_once "classes.php";
+
     if(isset($_POST['x1']) && !empty($_POST['x1']) &&
         isset($_POST['y1']) && !empty($_POST['y1']) &&
         isset($_POST['x2']) && !empty($_POST['x2']) &&
