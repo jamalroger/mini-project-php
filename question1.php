@@ -84,12 +84,8 @@ include_once "classes.php";
                                 <div class="form-group">
                                     <input type="submit" value="Calculer distance" class="btn btn-primary calc">
                                 </div>
+
                             </form>
-                        </div>
-                        <div class="col-md-6 bg-white">
-                            <div class="img-container">
-                                <img class="img-fluid" src="inc/1.jpg" alt="">
-                            </div>
                         </div>
                     </div>
                 </div>
