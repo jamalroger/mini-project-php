@@ -84,7 +84,6 @@ include_once "classes.php";
                                 <div class="form-group">
                                     <input type="submit" value="Calculer distance" class="btn btn-primary calc">
                                 </div>
-
                             </form>
                         </div>
                     </div>

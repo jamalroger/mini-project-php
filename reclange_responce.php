@@ -2,48 +2,48 @@
 include 'classes.php';
 
 
-if ($_GET) {
+if (isset($_POST)) {
 
-    if ($_GET['surface']) {
-        $xy = $_GET['rec-p-xy'];
+    if (isset($_POST['surface'])) {
+        $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET["rec-h"];
-        $w = $_GET["rec-w"];
+        $h = $_POST["rec-h"];
+        $w = $_POST["rec-w"];
         $rec = new Rectangle($h, $w, new Point($x, $y));
         echo "surface du rectangle est :" . $rec->surface();
     }
 
-    if ($_GET['inter1']) {
-        $xy = $_GET['rec-p-xy'];
+    if (isset($_POST['inter1'])) {
+        $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET['rec-h'];
-        $w = $_GET['rec-w'];
-        $p_xy = $_GET['p-xy'];
+        $h = $_POST['rec-h'];
+        $w = $_POST['rec-w'];
+        $p_xy = $_POST['p-xy'];
         $p_x = $p_xy[0];
         $p_y = $p_xy[3];
         $rec = new Rectangle($h, $w, new Point($x, $y));
         echo $rec->interieur1(new Point($p_x, $p_y)) ? "le point est interieur de la rectangle" : "le point est ne pas interieur de la rectangle";
     }
 
-    if ($_GET['inter2']) {
+    if (isset($_POST['inter2'])) {
 
         // ---------------------------- //
-        $xy = $_GET['rec-p-xy'];
+        $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET['rec-h'];
-        $w = $_GET['rec-w'];
+        $h = $_POST['rec-h'];
+        $w = $_POST['rec-w'];
         // rectangle 1
         $rec1 = new Rectangle($h, $w, new Point($x, $y));
 
         // ---------------------------- //
-        $xy = $_GET['rec2-p-xy'];
+        $xy = $_POST['rec2-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET['rec2-h'];
-        $w = $_GET['rec2-w'];
+        $h = $_POST['rec2-h'];
+        $w = $_POST['rec2-w'];
         // rectangle 2
         $rec2 = new Rectangle($h, $w, new Point($x, $y));
         // ---------------------------- //
@@ -52,23 +52,23 @@ if ($_GET) {
             "le rectangle 2 est interieur de la rectangle 1" : "le rectangle 2 est ne pas interieur de la rectangle 1";
     }
 
-    if ($_GET['egalite']) {
+    if (isset($_POST['egalite'])) {
 
         // ---------------------------- //
-        $xy = $_GET['rec-p-xy'];
+        $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET['rec-h'];
-        $w = $_GET['rec-w'];
+        $h = $_POST['rec-h'];
+        $w = $_POST['rec-w'];
         // rectangle 1
         $rec1 = new Rectangle($h, $w, new Point($x, $y));
 
         // ---------------------------- //
-        $xy = $_GET['rec2-p-xy'];
+        $xy = $_POST['rec2-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
-        $h = $_GET['rec2-h'];
-        $w = $_GET['rec2-w'];
+        $h = $_POST['rec2-h'];
+        $w = $_POST['rec2-w'];
         // rectangle 2
         $rec2 = new Rectangle($h, $w, new Point($x, $y));
         // ---------------------------- //

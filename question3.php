@@ -34,7 +34,7 @@ include_once "classes.php";
                     <div class="row">
                         <div class="col-md-6">
 
-                            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
+                            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
                                 <div id="rec1">
                                     <label> Rectangle <a href="#" onclick="document.getElementById('rec2').style.display='block'" class="btn btn-primary"> Ajouter Rectangle </a> <a href="#" onclick="document.getElementById('point2').style.display='block'" class="btn btn-primary"> Ajouter Point </a></label>
