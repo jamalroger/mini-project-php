@@ -27,7 +27,7 @@ class Rectangle
     public function interieur2(Rectangle $rectangle)
     {
         // we already have a function that checks for the point , we add height and width checkers
-        return interieur1($rectangle->point) && $rectangle->h <= $this->h && $rectangle->w <= $this->w;    
+        return $this->interieur1($rectangle->point) && $rectangle->h <= $this->h && $rectangle->w <= $this->w;    
     }
 
 
@@ -38,4 +38,5 @@ class Rectangle
             && $this->h == $rec->h
             && $this->w == $rec->w;
     }
+    
 }
