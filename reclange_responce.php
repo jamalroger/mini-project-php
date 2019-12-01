@@ -4,7 +4,7 @@ include 'classes.php';
 
 if (isset($_POST)) {
 
-    if (isset($_POST['surface'])) {
+    if (isset($_POST['surface']) && isset($_POST['rec-p-xy']) && isset($_POST["rec-h"]) && isset($_POST["rec-w"]) ) {
         $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
@@ -14,7 +14,7 @@ if (isset($_POST)) {
         echo "surface du rectangle est :" . $rec->surface();
     }
 
-    if (isset($_POST['inter1'])) {
+    if (isset($_POST['inter1']) && isset($_POST['rec-p-xy']) && isset($_POST["rec-h"]) && isset($_POST["rec-w"]) && isset($_POST["p-xy"]) ) {
         $xy = $_POST['rec-p-xy'];
         $x = $xy[0];
         $y = $xy[3];
@@ -27,7 +27,7 @@ if (isset($_POST)) {
         echo $rec->interieur1(new Point($p_x, $p_y)) ? "le point est interieur de la rectangle" : "le point est ne pas interieur de la rectangle";
     }
 
-    if (isset($_POST['inter2'])) {
+    if (isset($_POST['inter2']) && isset($_POST['rec-p-xy']) && isset($_POST["rec-h"]) && isset($_POST["rec-w"]) && isset($_POST['inter2']) && isset($_POST['rec2-p-xy']) && isset($_POST["rec2-h"]) && isset($_POST["rec2-w"])) {
 
         // ---------------------------- //
         $xy = $_POST['rec-p-xy'];
@@ -52,7 +52,7 @@ if (isset($_POST)) {
             "le rectangle 2 est interieur de la rectangle 1" : "le rectangle 2 est ne pas interieur de la rectangle 1";
     }
 
-    if (isset($_POST['egalite'])) {
+    if (isset($_POST['egalite']) && isset($_POST['rec-p-xy']) && isset($_POST["rec-h"]) && isset($_POST["rec-w"]) && isset($_POST['inter2']) && isset($_POST['rec2-p-xy']) && isset($_POST["rec2-h"]) && isset($_POST["rec2-w"])) {
 
         // ---------------------------- //
         $xy = $_POST['rec-p-xy'];
