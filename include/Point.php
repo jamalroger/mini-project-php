@@ -23,9 +23,9 @@ class Point
 
     public function distance(Point $p)
     { 
-        $x = pow($this->x - $p->x,2);
+        $x = pow($p->x - $this->x,2);
 
-        $y = pow($this->y - $p->y,2);
+        $y = pow($p->y - $this->y,2);
 
         return sqrt($x+$y);
     }
