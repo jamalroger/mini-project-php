@@ -34,7 +34,7 @@ include_once "classes.php";
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <a href="question1.php" class="menu-item active d-block">
+                <a href="question1.php" class="menu-item active-question d-block">
                     Question 1
                 </a>
             </div>
