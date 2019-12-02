@@ -1,0 +1,88 @@
+body {
+    color: white;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    margin: 0;
+    display: flex;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.menu-item {
+    background: #25255a;
+    text-align: center;
+    padding: 22px;
+    margin-top: 10px;
+    border-radius: 10px 10px 0 0;
+    color: white;
+    text-decoration: none;
+    transition-duration: 1s;
+}
+
+.menu-item:hover {
+    color: white;
+    text-decoration: none;
+    background: #6565a2;
+}
+
+.form {
+    background: #25255a;
+    padding: 30px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px !important;
+}
+
+.calc {
+    background-color: #6c97c5;
+    border-color: #6c97c5;
+}
+
+.calc:hover {
+    color: white;
+    text-decoration: none;
+    background: #6565a2;
+    border-color: #6565a2;
+}
+
+.active-question {
+    background: #6565a2;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+table {
+    color: white;
+}
+
+.loader svg {
+    height: 5.5rem;
+    width: 5.5rem;
+    fill: #F59A83;
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear;
+}
+
+.loader {
+    position: relative;
+    left: 200px;
+    top: 300px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
