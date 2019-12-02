@@ -43,7 +43,7 @@ if(isset($_POST['point1']) && !empty($_POST['point1']) &&
 
     echo '<script>
     function setup() {
-        let canvas = createCanvas(520, windowHeight-290);
+        let canvas = createCanvas(520, windowHeight-260);
         canvas.parent("sketch-holder");
     }
 

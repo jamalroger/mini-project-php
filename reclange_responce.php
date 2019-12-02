@@ -13,7 +13,7 @@ if (isset($_POST)) {
         $rec = new Rectangle($h, $w, new Point($x, $y));
         echo '<script>
         function setup() {
-            let canvas = createCanvas(520, windowHeight-290);
+            let canvas = createCanvas(520, windowHeight-260);
             canvas.parent("sketch-holder");
         }
     
