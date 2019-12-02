@@ -12,7 +12,7 @@ include_once "classes.php";
 </head>
 
 <body class="lead">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4">
                 <a href="question1.php" class="menu-item d-block">
@@ -25,7 +25,7 @@ include_once "classes.php";
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="question3.php" class="menu-item active d-block">
+                <a href="question3.php" class="menu-item active-question d-block">
                     Question 3
                 </a>
             </div>
@@ -88,7 +88,7 @@ include_once "classes.php";
                         
                         
                             <?php
-                            include "./reclange_responce.php";
+                            include "./rectangle_response.php";
                             ?>
                             <div id="sketch-holder">
                                     

@@ -1,96 +1,6 @@
 <?php
 include_once "classes.php";
-
-    if(isset($_POST['x1']) && !empty($_POST['x1']) &&
-        isset($_POST['y1']) && !empty($_POST['y1']) &&
-        isset($_POST['x2']) && !empty($_POST['x2']) &&
-        isset($_POST['y2']) && !empty($_POST['y2'])){ 
-        
-        $x1 = $_POST['x1'];
-        $y1 = $_POST['y1'];
-        $x2 = $_POST['x2'];
-        $y2 = $_POST['y2'];
-        $point1 = new Point($x1,$y1);
-        $point2 = new Point($x2,$y2);
-        $result = "la distance entre le point (".$point1->afficherX().",".$point1->afficherY().")"." et le point (".$point2->afficherX().",".$point2->afficherY().") est : ".$point1->distance($point2);
-        
-        
-         echo '<script>
-    function setup() {
-        let canvas = createCanvas(520, windowHeight-260);
-        canvas.parent("sketch-holder");
-    }
-    function draw() {
-        background(240, 248, 255);
-        scale(1.30);
-        stroke("red");
-        strokeWeight(3);
-        line(2, 2, 2, 400);
-
-        fill(255, 255, 255);
-        stroke("black");
-        text("Y", 11, 400);
-
-        stroke("red");
-        strokeWeight(3);
-        line(2, 2, 370, 2);
-
-
-        fill(255, 255, 255);
-        stroke("black");
-        text("X", 380, 11);
-            let point1 = addPoint('.$x1.', '.$y1.', "purple");
-             let point2 = addPoint('.$x2.', '.$y2.', "black");
-           // let point3 = addPoint(240, 190, "red");
-           // let point4 = addPoint(30,100,"green");
-
-            return drawShape(point1, point2);
-        }
-
-        function addPoint(x, y, color) {
-            stroke(color); // Change the color
-            strokeWeight(5);
-            point(x, y);
-
-            strokeWeight(1);
-            line(0, y, x, y);
-            line(x, y, x, 0);
-
-            return [x, y];
-        }
-
-        function drawShape(...coor) {
-            if (coor.length == 2) {
-                let [x1, y1] = coor[0];
-                let [x2, y2] = coor[1];
-                line(x1, y1, x2, y2);
-            }
-
-            if (coor.length == 3 && Array.isArray(coor[1])) {
-                let [x1, y1] = coor[0];
-                let [x2, y2] = coor[1];
-                let [x3, y3] = coor[2];
-
-                fill(0, 255, 0, 160);
-                triangle(x1, y1, x2, y2, x3, y3);
-            }
-
-            if (coor.length == 3) {
-                let [x1, y1] = coor[0];
-                let width = coor[1];
-                let height = coor[2];
-
-                fill(0, 255, 0, 160);
-                rect(x1, y1, width, height);
-            }
-        }</script>';
-
-
-    }else{
-        if(isset($_POST['x1'])) {
-            $result = "les champs sont obligatoire";
-        }
-    }
+include_once "distance_response.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -104,10 +14,10 @@ include_once "classes.php";
 </head>
 
 <body class="lead">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4">
-                <a href="question1.php" class="menu-item active d-block">
+                <a href="question1.php" class="menu-item active-question d-block">
                     Question 1
                 </a>
             </div>
@@ -123,7 +33,6 @@ include_once "classes.php";
             </div>            
                 <div class="form">
                     <div class="row">
-                        <div class="col-md-6"></div>
                             <p>
                                 Définir une classe Point avec deux propriétés private x et y (x est l’abscisse et y est
                                 l’ordonnée), et quatre méthodes :<br>
@@ -141,7 +50,7 @@ include_once "classes.php";
                                     </div>";
                                     }
                         ?>
-                        
+                        <div class='col-md-12 d-flex justify-content-center' >
                             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                             <table width="1000" cellpadding="20" style="color:white;">
                                 <tr>
@@ -169,6 +78,7 @@ include_once "classes.php";
                                 </tr>
                                 </table>
                             </form>
+                        </div>
                         </div>
                     </div>
                 </div>

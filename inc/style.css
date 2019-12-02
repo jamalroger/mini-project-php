@@ -1,6 +1,6 @@
 body {
     color: white;
-    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    background-image: url('./bg.jpg');
     margin: 0;
     display: flex;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -24,7 +24,7 @@ body {
 }
 
 .form {
-    background: #25255a;
+    background: #000000ab;
     padding: 30px;
 }
 
@@ -70,19 +70,4 @@ table {
     fill: #F59A83;
     transform-origin: 44% 50%;
     animation: rotate 1.5s infinite linear;
-}
-
-.loader {
-    position: relative;
-    left: 200px;
-    top: 300px;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
